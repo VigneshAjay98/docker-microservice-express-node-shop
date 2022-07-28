@@ -1,0 +1,13 @@
+HOST=http://localhost:14001
+PORT=14001
+
+DB_HOST=mongodb://host.docker.internal:27017/e-shop
+
+JWT_SECRET=RESTFULAPIs
+
+SESSION_SECRET=itsasessionsecret
+
+GOOGLE_CLIENT_ID=438656993654-7ooju0e2luo99bt90b6319tc7p0dh0ou.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=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
+
+REDIS_URL=redis://redis:6379

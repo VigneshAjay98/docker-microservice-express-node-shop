@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  shop-cart:
+    container_name: shop-cart
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "14002:14002"
+      - "4002:4002"
+    # command: nodemon -w *.js -w .env ./src/index.js
+    command: 
+      - nodemon 
+      - --inspect=0.0.0.0:4002
+      - ./src/index.js
+    volumes: 
+      - /d/Projects/Nodejs/shop-microservices/cart:/var/www/shop-cart
+    networks:
+      - shop_microservices
+networks:
+  shop_microservices:
+    name: shop_microservices
+    driver: bridge

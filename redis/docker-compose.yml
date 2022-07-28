@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - shop_microservices
+networks:
+  shop_microservices:
+    name: shop_microservices
+    driver: bridge

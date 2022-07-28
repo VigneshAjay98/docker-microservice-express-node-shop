@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  shop-orders:
+    container_name: shop-orders
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: nodemon -w *.js -w .env ./src/index.js
+    ports:
+      - "14003:14003"
+    volumes: 
+      - /d/Projects/Nodejs/shop-microservices/orders:/var/www/shop-orders
+    networks:
+      - shop_microservices
+networks:
+  shop_microservices:
+    name: shop_microservices
+    driver: bridge
